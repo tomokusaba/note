@@ -18,7 +18,7 @@ description: note記事のドラフトを著者の文体・構成・note向けMa
 
 1. 文体・構成・Markdown 運用は [`write-note-article`](../../.agents/skills/write-note-article/SKILL.md) と [`note-writing`](../skills/note-writing/SKILL.md) に準拠する。
 2. note 固有の Markdown 形式を変更しない。Zenn のフロントマター、`:::message`、`articles/` 配置、Zenn CLI 手順を持ち込まない。
-3. 新規記事は、本文を書き始める前に連番の Markdown ファイルを新規作成する。既存最大番号の次を使い、規約がない場合は 3 桁ゼロ埋め（例: `001.md`）にする。
+3. 新規記事は、本文を書き始める前に `YYYYMMDD-GUID.md` 形式の Markdown ファイルを新規作成する。`YYYYMMDD` は JST の記事日付、`GUID` は新しく生成した小文字の標準 GUID を使う。
 4. コードブロックには必要に応じて言語名を付ける。
 5. 画像やファイル添付が必要な場合は、本文中に挿入位置・説明・alt 相当の説明を明記する。
 6. Microsoft 系の技術トピックを書くときは [`microsoft-docs`](../../.agents/skills/microsoft-docs/SKILL.md) スキルで一次情報を引き、`learn.microsoft.com` 系 URL には `WT.mc_id=DT-MVP-5004827` を付与する。
@@ -28,20 +28,20 @@ description: note記事のドラフトを著者の文体・構成・note向けMa
 
 1. ユーザーの依頼から想定読者 / 主題 / 目的 / 想定文字数を抽出する。曖昧な場合は合理的に推測し、冒頭に推測内容を短く明示する。
 2. [`write-note-article`](../../.agents/skills/write-note-article/SKILL.md) と [`note-writing`](../skills/note-writing/SKILL.md) を読み込み、Markdown 要素と出力要件を確認する。
-3. 既存の Markdown ファイル名を確認し、最大番号の次の連番で新規 `.md` ファイルを作成する。保存先指定がない場合はリポジトリルート直下を使う。
+3. 既存の Markdown ファイル名との衝突がないことを確認し、`YYYYMMDD-GUID.md` 形式で新規 `.md` ファイルを作成する。保存先指定がない場合はリポジトリルート直下を使う。
 4. 既存の下書きやメモがある場合は、主張・体験・素材を抽出して章立てへ整理する。
 5. 3 つのタイトル候補を作り、最も本文に合うタイトルを採用する。
 6. リードで「誰に向けた何の記事か」「読み終えると何が得られるか」を示す。
 7. H2 / H3 見出しを中心に構成し、短い段落で本文を書く。
 8. 具体例、体験、比較、手順、引用を必要な箇所に入れる。
 9. まとめでは重要な持ち帰りを短く整理し、必要なら次の行動を書く。
-10. 作成済みの連番 Markdown ファイルに、note に貼り付けやすい完成稿を書き込む。
+10. 作成済みの Markdown ファイルに、note に貼り付けやすい完成稿を書き込む。
 
 ## してはいけないこと
 
 - note 固有の Markdown を Zenn / Qiita / GitHub Pages 向けに置き換える
 - YAML フロントマターや公開設定を勝手に追加する
-- 連番 Markdown ファイルを作成せずに新規記事を書き始める
+- `YYYYMMDD-GUID.md` 形式の Markdown ファイルを作成せずに新規記事を書き始める
 - 著者の主張・事実・ニュアンスを変える
 - 出典なしの数値・仕様を断定する
 - 「いかがでしたでしょうか」のような定型句で締める
