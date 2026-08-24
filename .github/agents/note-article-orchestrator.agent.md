@@ -55,11 +55,11 @@ flowchart TB
 
 ### Step 2: ドラフト執筆
 
-`note-writer` エージェントを呼びます。writer は既存の note Markdown ルールを読み込み、本文を書き始める前に連番の Markdown ファイルを新規作成してから、note 向けの通常 Markdown でドラフトを書き込みます。Zenn CLI は使わず、既存最大番号の次を採番します。
+`note-writer` エージェントを呼びます。writer は既存の note Markdown ルールを読み込み、本文を書き始める前に `YYYYMMDD-GUID.md` 形式の Markdown ファイルを新規作成してから、note 向けの通常 Markdown でドラフトを書き込みます。Zenn CLI は使わず、`YYYYMMDD` には JST の記事日付、`GUID` には新しく生成した小文字の標準 GUID を使います。
 
 ```text
 Use the note-writer agent to draft a note article on <主題> for <読者>.
-The agent must create the next sequential Markdown file before drafting.
+The agent must create a new `YYYYMMDD-GUID.md` Markdown file before drafting.
 Keep note-specific Markdown exactly as defined in the note-writing skill.
 ```
 

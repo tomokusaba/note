@@ -49,6 +49,8 @@ Return one or more of the following depending on the request.
 5. Revised draft
 6. Short SNS promo copy
 
+When creating a new file in this repository, use the filename format `YYYYMMDD-GUID.md` based on the JST article date and a newly generated GUID. Example: `20260725-550e8400-e29b-41d4-a716-446655440000.md`.
+
 ## Style Guide
 - Write in Japanese
 - Lead with the conclusion
